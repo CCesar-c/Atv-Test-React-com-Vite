@@ -1,0 +1,48 @@
+home {
+    display: flex;
+    background-color: black;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    background: black;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.disable{
+    opacity: 0;
+    display: none;
+}
+.enable{
+    opacity: 1;
+    display: flex;
+}
+button{
+    padding: 10px;
+    margin: 5px;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 3px;
+}
+#capsule {
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
