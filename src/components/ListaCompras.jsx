@@ -7,13 +7,13 @@ export function ListaDeCompras() {
 
   const adicionarItem = () => {
     if (novoItem.trim() !== '') {
-      const novoItem = {
+      const novo = {
         id: Date.now(),
         nome: novoItem,
         comprado: false,
         quantidade: 1,
       };
-      setItens([...itens, novoItem]);
+      setItens([...itens, novo]);
       setNovoItem('');
     }
   };
@@ -42,10 +42,9 @@ export function ListaDeCompras() {
     <div>
       <input
         type="text"
-        value={novoItem}
         onChange={(e) => setNovoItem(e.target.value)}
       />
-      <button onClick={adicionarItem}>Adicionar</button>
+      <button onClick={() => adicionarItem()}>Adicionar</button>
       <div>
         <h2>Lista de Compras</h2>
         <ul>
@@ -70,7 +69,7 @@ export function ListaDeCompras() {
         </ul>
       </div>
       <div>
-        <button onClick={limparComprados}>Limpar Comprados</button>
+        <button onClick={() => limparComprados()}>Limpar Comprados</button>
       </div>
       <div>
         <p>Total de itens: {totalItens}</p>

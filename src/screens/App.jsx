@@ -164,7 +164,7 @@ function App() {
         {/*  tela 6 */}
         {Valor_class == "tela6" ? <div id='capsule' style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }} >
           <h1>React + Axios (Consumo de API) 20/04 </h1>
-          <button onClick={() => { buscarUsuarios() }} >Buscar usuarios</button>
+          <button onClick={() => { buscarUsuarios() }} >{loading ? "Carregando..." : "Buscar usuarios"}</button>
           {usuarios != null ? usuarios.map((user, key) => {
             return (
               <div style={{ margin: "7px", padding: "5px", border: "1px solid black", borderRadius: "8px" }} >
