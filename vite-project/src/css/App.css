@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-home {
+#container {
     display: flex;
     height: 80vh;
     justify-content: center;
@@ -12,7 +12,7 @@ home {
 * {
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+
 }
 
 body {
@@ -23,16 +23,6 @@ input {
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
-}
-
-.disable {
-    opacity: 0;
-    display: none;
-}
-
-.enable {
-    opacity: 1;
-    display: flex;
 }
 
 button {
@@ -60,7 +50,7 @@ button {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  width: 300px;
+  width: 150px;
 }
 
 .foto {
