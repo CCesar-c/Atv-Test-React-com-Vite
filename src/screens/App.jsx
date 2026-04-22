@@ -6,7 +6,10 @@ import { CartaoPerfil } from '../components/Card.jsx'
 import { Contador } from '../components/Contador.jsx'
 import { ListaDeCompras } from '../components/listaCompras.jsx'
 import { Header } from '../components/Header.jsx'
+import { Texto } from '../components/Texto.jsx'
+import { Personagens_naruto } from '../components/Lista_personages.jsx'
 function App() {
+  var Array_botoes = [{ nome: "Calculadora", telaid: "tela1" }, { nome: "Calculador de idade", telaid: "tela2" }, { nome: "Cartão de perfil", telaid: "tela3" }, { nome: "Lista de compras", telaid: "tela4" }, { nome: "contador", telaid: "tela5" }, { nome: "Tela Axios", telaid: "tela6" }, { nome: "Atv Naruto", telaid: "tela7" }]
   const [Valor_class, setClass] = useState("tela1")
 
   const [Valor_sinal, setSinal] = useState("")
@@ -75,30 +78,11 @@ function App() {
   return (
     <>
       <Header id='Header'  >
-        <button onClick={() => {
-          setClass("tela1")
-          setResultado(0)
-        }} >Calculadora</button>
-        <button onClick={() => {
-          setClass("tela2")
-          setResultado(0)
-        }}  >Calculador de idade </button>
-        <button onClick={() => {
-          setClass("tela3")
-          setResultado(0)
-        }} > Cartão de perfil</button>
-        <button onClick={() => {
-          setClass("tela4")
-          setResultado(0)
-        }} >Lista de compras</button>
-        <button onClick={() => {
-          setClass("tela5")
-          setResultado(0)
-        }} >contador</button>
-        <button onClick={() => {
-          setClass("tela6")
-          setResultado(0)
-        }} >Tela Axios</button>
+        {Array_botoes.map((item, key) => {
+          return (
+            <button key={key} onClick={() => { setClass(item.telaid) }} >{item.nome}</button>
+          )
+        })}
       </Header>
       {/* tela 1 */}
       <div id='container'>
@@ -120,7 +104,7 @@ function App() {
             <br />
             <button onClick={() => { calcular_valor() }} >Calcular o resultado</button>
             <br />
-            <text>Resultado: {Value_resultado}</text>
+            <Texto>Resultado: {Value_resultado}</Texto>
           </div>
           : null}
         {/* tela 2 */}
@@ -136,7 +120,7 @@ function App() {
           <br />
           <button onClick={() => { calcular_idade() }} >Calcular o resultado</button>
           <br />
-          <text>Voce tem: {Value_resultado}</text>
+          <Texto>Voce tem: {Value_resultado}</Texto>
         </div> : null}
         {/* tela 3 */}
         {Valor_class == "tela3" ? <div id='capsule' style={{ display: "flex", flexDirection: "column" }}  >
@@ -169,14 +153,20 @@ function App() {
             return (
               <div style={{ margin: "7px", padding: "5px", border: "1px solid black", borderRadius: "8px" }} >
                 <div key={key}>
-                  <text>Nome: {user.name} </text>
-                  <text>Email: {user.email} </text>
-                  <text>Cidade: {user.address.city} </text>
+                  <Texto>Nome: {user.name} </Texto>
+                  <Texto>Email: {user.email} </Texto>
+                  <Texto>Cidade: {user.address.city} </Texto>
                 </div>
               </div>
             )
-          }) : <text>Sem usuarios</text>}
+          }) : <Texto>Sem usuarios</Texto>}
         </div> : null}
+        {/* tela 7 */}
+        {/* https://api.jikan.moe/v4/characters/{id} */}
+        {Valor_class == "tela7" ?
+          <div style={{ display: "flex", flexDirection: "row"}} >
+            <Personagens_naruto />
+          </div> : null}
       </div>
     </>
   )
