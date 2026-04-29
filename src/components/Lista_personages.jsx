@@ -23,7 +23,7 @@ export function Personagens_naruto() {
                             <p>Rank: {ninja.rank}</p>
                             <p>Aldeia Natal: [{ninja.aldeianatal}]</p>
                             <p>Jutsus: [{ninja.justus}]</p>
-                            
+
                         </div>
                     )
                 }) : <p>Lista vazia</p>}
@@ -34,11 +34,15 @@ export function Personagens_naruto() {
 }
 
 export function Personagens_reais() {
-    {/* https://api.jikan.moe/v4/characters/{id} */ }
+    {/* 
+        https://api.jikan.moe/v4/characters/{id}
+        https://api.jikan.moe/v4/characters?q="PERONAGEM"
+    */}
     const Pessoas = [
 
-        { nome: "Cesar", profissao: "Desenvolvedor", foto: "https://myanimelist.net/images/characters/12/619337.jpg" },
-        { nome: "Gustavo", profissao: "Desenvolvedor", foto: "https://myanimelist.net/images/characters/16/563864.jpg" }
+        { nome: "Cesar", profissao: "Desenvolvedor" },
+        { nome: "Gustavo", profissao: "Desenvolvedor"},
+        { nome: "Davi", profissao: "Faz programa"}
     ]
     return (
         <div style={{ flexDirection: "column", display: "flex" }} >
@@ -46,7 +50,7 @@ export function Personagens_reais() {
             <div style={{ display: "flex", flexDirection: "row", gap: 10 }} >
                 {Pessoas.map((pessoa, key) => {
                     return (
-                        <CartaoPerfil nome={pessoa.nome} genero={"masculino"} profissao={pessoa.profissao} foto={pessoa.foto} />
+                        <CartaoPerfil nome={pessoa.nome} idade={pessoa.nome == "Davi" ? "16" : "17"} genero={"masculino"} profissao={pessoa.profissao} foto={pessoa.foto} />
                     )
                 })}
             </div>

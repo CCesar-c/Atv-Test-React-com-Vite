@@ -35,11 +35,8 @@ function App() {
     setLoading(true);
 
     try {
-
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-
       setUsuarios(response.data);
-
     } catch (error) {
 
       console.error("Erro!", error);
