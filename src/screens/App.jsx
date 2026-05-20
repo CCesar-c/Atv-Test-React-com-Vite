@@ -9,6 +9,17 @@ import { Header } from '../components/Header.jsx'
 import { Texto } from '../components/Texto.jsx'
 import { Lista_filmes, Calculadora, Lista_Axios_user, Calcular_idade, Criar_pessoas } from '../components/Lista_coisas.jsx';
 import { Personagens_naruto, Personagens_reais } from '../components/Lista_personages.jsx'
+import Atv_CardPerfil from '../components/Atv_20-05-2026/Atv.jsx';
+import Contador_atv from '../components/Atv_20-05-2026/Contador_atv.jsx';
+import FormularioNome from '../components/Atv_20-05-2026/FormularioNome.jsx';
+import AlternadorCor from '../components/Atv_20-05-2026/AlternadorCor.jsx';
+import ListaTarefas from '../components/Atv_20-05-2026/ListaTarefas.jsx';
+import Calculadora_atv from '../components/Atv_20-05-2026/Calculadora_atv.jsx';
+import Galeria from '../components/Atv_20-05-2026/Galeria.jsx';
+import Quiz from '../components/Atv_20-05-2026/Quiz.jsx';
+import ConversorTemperatura from '../components/Atv_20-05-2026/ConversorTemperatura.jsx';
+import Cronometro from '../components/Atv_20-05-2026/Cronometro.jsx';
+
 function App() {
   var Array_botoes = [
     { nome: "Calculadora", telaid: "tela1" },
@@ -19,7 +30,8 @@ function App() {
     { nome: "Tela Axios", telaid: "tela6" },
     { nome: "Atv Naruto", telaid: "tela7" },
     { nome: "Perfil", telaid: "tela8" },
-    { nome: "Filmes", telaid: "tela9" }
+    { nome: "Filmes", telaid: "tela9" },
+    { nome: "sim", telaid: "tela10" }
   ]
   const [Valor_class, setClass] = useState("tela1")
 
@@ -50,7 +62,7 @@ function App() {
           <h1>Tela de perfil</h1>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }} >
             {
-            Criar_pessoas({ objeto: [{ nome: "João", idade: 30, profissao: "Desenvolvedor" }, { nome: "Ana", idade: 28, profissao: "Desenvolvedora" }] })
+              Criar_pessoas({ objeto: [{ nome: "João", idade: 30, profissao: "Desenvolvedor" }, { nome: "Ana", idade: 28, profissao: "Desenvolvedora" }] })
             }
           </div>
         </div>
@@ -84,6 +96,14 @@ function App() {
         {/* tela 9 */}
         {Valor_class == "tela9" ?
           <Lista_filmes />
+          : null}
+        {/* tela 10 */}
+        {Valor_class == "tela10" ?
+          // < Atv/>
+          // <Atv_CardPerfil />
+          // <Contador_atv />
+          // <AlternadorCor />
+          <Cronometro />
           : null}
 
       </div>
