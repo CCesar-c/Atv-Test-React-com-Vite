@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.texto{
+  font-size: 20px;
+}
+
 #container {
     display: flex;
     height: 80vh;

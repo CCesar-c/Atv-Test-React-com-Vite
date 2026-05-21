@@ -9,16 +9,9 @@ import { Header } from '../components/Header.jsx'
 import { Texto } from '../components/Texto.jsx'
 import { Lista_filmes, Calculadora, Lista_Axios_user, Calcular_idade, Criar_pessoas } from '../components/Lista_coisas.jsx';
 import { Personagens_naruto, Personagens_reais } from '../components/Lista_personages.jsx'
-import Atv_CardPerfil from '../components/Atv_20-05-2026/Atv.jsx';
-import Contador_atv from '../components/Atv_20-05-2026/Contador_atv.jsx';
-import FormularioNome from '../components/Atv_20-05-2026/FormularioNome.jsx';
-import AlternadorCor from '../components/Atv_20-05-2026/AlternadorCor.jsx';
-import ListaTarefas from '../components/Atv_20-05-2026/ListaTarefas.jsx';
-import Calculadora_atv from '../components/Atv_20-05-2026/Calculadora_atv.jsx';
-import Galeria from '../components/Atv_20-05-2026/Galeria.jsx';
-import Quiz from '../components/Atv_20-05-2026/Quiz.jsx';
-import ConversorTemperatura from '../components/Atv_20-05-2026/ConversorTemperatura.jsx';
+
 import Cronometro from '../components/Atv_20-05-2026/Cronometro.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   var Array_botoes = [
@@ -31,7 +24,7 @@ function App() {
     { nome: "Atv Naruto", telaid: "tela7" },
     { nome: "Perfil", telaid: "tela8" },
     { nome: "Filmes", telaid: "tela9" },
-    { nome: "sim", telaid: "tela10" }
+    { nome: "Cronometro", telaid: "tela10" }
   ]
   const [Valor_class, setClass] = useState("tela1")
 
@@ -39,7 +32,7 @@ function App() {
   const [Value_nro1, setValue_nro1] = useState(0)
   const [Value_nro2, setValue_nro2] = useState(0)
   const [Value_resultado, setResultado] = useState(0)
-
+  const nav = useNavigate()
   return (
     <>
       <Header id='Header'  >
@@ -48,6 +41,7 @@ function App() {
             <button key={key} onClick={() => { setClass(item.telaid) }} >{item.nome}</button>
           )
         })}
+        <button onClick={() => { nav("/SegundoApp")}} >{"proxima tela"}</button>
       </Header>
       {/* tela 1 */}
       <div id='container'>
