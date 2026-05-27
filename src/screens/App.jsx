@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 import '../css/App.css';
 import { CartaoPerfil } from '../components/Card.jsx'
@@ -12,6 +12,7 @@ import { Personagens_naruto, Personagens_reais } from '../components/Lista_perso
 
 import Cronometro from '../components/Atv_20-05-2026/Cronometro.jsx';
 import { useNavigate } from 'react-router-dom';
+import { TemaContext, UserContext } from '../Context/Contextos.jsx';
 
 function App() {
   var Array_botoes = [
@@ -33,8 +34,10 @@ function App() {
   const [Value_nro2, setValue_nro2] = useState(0)
   const [Value_resultado, setResultado] = useState(0)
   const nav = useNavigate()
+
+
   return (
-    <>
+    <div style={{}}>
       <Header id='Header'  >
         {Array_botoes.map((item, key) => {
           return (
@@ -101,8 +104,7 @@ function App() {
           : null}
 
       </div>
-    </>
+    </div>
   )
 }
-
 export default App
