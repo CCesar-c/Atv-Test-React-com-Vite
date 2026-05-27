@@ -9,7 +9,7 @@ export function TemaProvider({ children }) {
         tema == "white" ? SetTema("black") : SetTema("white");
     }
     return (
-        <TemaContext.Provider value={tema} >
+        <TemaContext.Provider value={{ tema, TrocarCor }} >
             {children}
         </TemaContext.Provider>
     )
@@ -32,7 +32,7 @@ export function UserProvider({ children }) {
     )
 
     return (
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={{ user }}>
             {children}
         </UserContext.Provider>
     )

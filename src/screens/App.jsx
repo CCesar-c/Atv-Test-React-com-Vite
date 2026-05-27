@@ -35,9 +35,10 @@ function App() {
   const [Value_resultado, setResultado] = useState(0)
   const nav = useNavigate()
 
+  const { tema, TrocarCor } = useContext(TemaContext)
 
   return (
-    <div style={{}}>
+    <div style={{ backgroundColor:`${tema}` }}>
       <Header id='Header'  >
         {Array_botoes.map((item, key) => {
           return (
@@ -102,8 +103,8 @@ function App() {
           // <AlternadorCor />
           <Cronometro />
           : null}
-
       </div>
+      <button type="button" onClick={() => TrocarCor()} >Trocar de cor</button>
     </div>
   )
 }

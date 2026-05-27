@@ -8,26 +8,32 @@ import Calculadora_atv from '../components/Atv_20-05-2026/Calculadora_atv.jsx';
 import Galeria from '../components/Atv_20-05-2026/Galeria.jsx';
 import Quiz from '../components/Atv_20-05-2026/Quiz.jsx';
 import ConversorTemperatura from '../components/Atv_20-05-2026/ConversorTemperatura.jsx';
-import { useState } from "react";
+import {PraticandoContextApi} from '../components/Atv_27-05-2026/PraticandoContextAPI.jsx'
+import { useContext, useState } from "react";
+import { TemaContext } from "../Context/Contextos.jsx";
 export function SegundoApp() {
     const [telAtual, setTelaAtual] = useState(`${Atv_CardPerfil.name}`)
     var Array_botoes = [
         { id: 0, nome: `${Atv_CardPerfil.name}`, componente: Atv_CardPerfil },
-        { id: 0, nome: `${Contador_atv.name}`, componente: Contador_atv },
-        { id: 0, nome: `${FormularioNome.name}`, componente: FormularioNome },
-        { id: 0, nome: `${AlternadorCor.name}`, componente: AlternadorCor },
-        { id: 0, nome: `${ListaTarefas.name}`, componente: ListaTarefas },
-        { id: 0, nome: `${Calculadora_atv.name}`, componente: Calculadora_atv },
-        { id: 0, nome: `${Galeria.name}`, componente: Galeria },
-        { id: 0, nome: `${Quiz.name}`, componente: Quiz },
-        { id: 0, nome: `${ConversorTemperatura.name}`, componente: ConversorTemperatura },
+        { id: 1, nome: `${Contador_atv.name}`, componente: Contador_atv },
+        { id: 2, nome: `${FormularioNome.name}`, componente: FormularioNome },
+        { id: 3, nome: `${AlternadorCor.name}`, componente: AlternadorCor },
+        { id: 4, nome: `${ListaTarefas.name}`, componente: ListaTarefas },
+        { id: 5, nome: `${Calculadora_atv.name}`, componente: Calculadora_atv },
+        { id: 6, nome: `${Galeria.name}`, componente: Galeria },
+        { id: 7, nome: `${Quiz.name}`, componente: Quiz },
+        { id: 8, nome: `${ConversorTemperatura.name}`, componente: ConversorTemperatura },
+        { id: 8, nome: `${PraticandoContextApi.name}`, componente: PraticandoContextApi },
+        { id: 9, nome: `${ConversorTemperatura.name}`, componente: ConversorTemperatura }
     ]
+
+    const { tema, TrocarCor } = useContext(TemaContext)
     return (
-        <div>
+        <div style={{ backgroundColor: `${tema}` }}>
             <Header id='Header'  >
                 {Array_botoes.map((item) => {
                     return (
-                        <button key={item.id} onClick={() => { item.nome == telAtual ? setTelaAtual(""):setTelaAtual(item.nome) }} >{item.nome}</button>
+                        <button key={item.id} onClick={() => { item.nome == telAtual ? setTelaAtual("") : setTelaAtual(item.nome) }} >{item.nome}</button>
                     )
                 })}
             </Header>
@@ -42,6 +48,7 @@ export function SegundoApp() {
                     }
                 })}
             </div>
+            <button type="button" onClick={() => TrocarCor()} >Trocar de cor</button>
         </div>
     )
 }
