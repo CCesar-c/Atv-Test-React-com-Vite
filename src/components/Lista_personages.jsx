@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import React from 'react'
-import { Rodape } from './rodape';
+import { Rodape } from './Rodape';
 import { CartaoPerfil } from './Card';
 import { Texto } from './Texto';
 export function Personagens_naruto() {

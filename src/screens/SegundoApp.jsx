@@ -1,4 +1,4 @@
-import { Header } from "../components/Header"
+import { Header, Footer } from "../components/Sidebar.jsx"
 import Atv_CardPerfil from '../components/Atv_20-05-2026/Atv.jsx';
 import Contador_atv from '../components/Atv_20-05-2026/Contador_atv.jsx';
 import FormularioNome from '../components/Atv_20-05-2026/FormularioNome.jsx';
@@ -8,7 +8,7 @@ import Calculadora_atv from '../components/Atv_20-05-2026/Calculadora_atv.jsx';
 import Galeria from '../components/Atv_20-05-2026/Galeria.jsx';
 import Quiz from '../components/Atv_20-05-2026/Quiz.jsx';
 import ConversorTemperatura from '../components/Atv_20-05-2026/ConversorTemperatura.jsx';
-import {PraticandoContextApi} from '../components/Atv_27-05-2026/PraticandoContextAPI.jsx'
+import { PCA as PraticandoContextApi} from '../components/Atv_27-05-2026/PraticandoContextAPI.jsx'
 import { useContext, useState } from "react";
 import { TemaContext } from "../Context/Contextos.jsx";
 export function SegundoApp() {
@@ -23,8 +23,7 @@ export function SegundoApp() {
         { id: 6, nome: `${Galeria.name}`, componente: Galeria },
         { id: 7, nome: `${Quiz.name}`, componente: Quiz },
         { id: 8, nome: `${ConversorTemperatura.name}`, componente: ConversorTemperatura },
-        { id: 8, nome: `${PraticandoContextApi.name}`, componente: PraticandoContextApi },
-        { id: 9, nome: `${ConversorTemperatura.name}`, componente: ConversorTemperatura }
+        { id: 9, nome: `${PraticandoContextApi.name}`, componente: PraticandoContextApi },
     ]
 
     const { tema, TrocarCor } = useContext(TemaContext)
@@ -48,7 +47,7 @@ export function SegundoApp() {
                     }
                 })}
             </div>
-            <button type="button" onClick={() => TrocarCor()} >Trocar de cor</button>
+            <Footer />
         </div>
     )
 }

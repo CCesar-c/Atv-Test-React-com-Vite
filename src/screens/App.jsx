@@ -4,8 +4,8 @@ import axios from 'axios';
 import '../css/App.css';
 import { CartaoPerfil } from '../components/Card.jsx'
 import { Contador } from '../components/Contador.jsx'
-import { ListaDeCompras } from '../components/listaCompras.jsx'
-import { Header } from '../components/Header.jsx'
+import { ListaDeCompras } from '../components/ListaCompras.jsx'
+import { Header, Footer } from '../components/Sidebar.jsx'
 import { Texto } from '../components/Texto.jsx'
 import { Lista_filmes, Calculadora, Lista_Axios_user, Calcular_idade, Criar_pessoas } from '../components/Lista_coisas.jsx';
 import { Personagens_naruto, Personagens_reais } from '../components/Lista_personages.jsx'
@@ -45,7 +45,6 @@ function App() {
             <button key={key} onClick={() => { setClass(item.telaid) }} >{item.nome}</button>
           )
         })}
-        <button onClick={() => { nav("/SegundoApp")}} >{"proxima tela"}</button>
       </Header>
       {/* tela 1 */}
       <div id='container'>
@@ -104,7 +103,7 @@ function App() {
           <Cronometro />
           : null}
       </div>
-      <button type="button" onClick={() => TrocarCor()} >Trocar de cor</button>
+      <Footer />
     </div>
   )
 }
