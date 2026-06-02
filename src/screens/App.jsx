@@ -55,9 +55,9 @@ function App() {
         {/* tela 2 */}
         {Valor_class == "tela2" ? Calcular_idade(setResultado, Value_nro1, Value_nro2, Valor_sinal, setValue_nro1, setValue_nro2, Value_resultado) : null}
         {/* tela 3 */}
-        {Valor_class == "tela3" ? <div id='capsule' style={{ display: "flex", flexDirection: "column", margin: "10px" }}  >
+        {Valor_class == "tela3" ? <div id='capsule' style={{ display: "flex", flexDirection: "column" }}  >
           <h1>Tela de perfil</h1>
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }} >
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", height:480 }} >
             {
               Criar_pessoas({ objeto: [{ nome: "João", idade: 30, profissao: "Desenvolvedor" }, { nome: "Ana", idade: 28, profissao: "Desenvolvedora" }] })
             }

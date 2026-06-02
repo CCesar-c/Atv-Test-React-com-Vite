@@ -15,7 +15,7 @@ export default function Galeria() {
         <>
             {foto.map((ft) =>(
                 <div>
-                    <img src={ft.url} alt={ft.id} height={fotoS == ft.id ? 500:100} width={fotoS == ft.id ? 500:100} onClick={() => setFotoS(ft.id)} />
+                    <img src={ft.url} alt={ft.id} height={fotoS == ft.id ? 250:50} width={fotoS == ft.id ? 250:50} onClick={() => fotoS === ft.id ? setFotoS(null):setFotoS(ft.id)} />
                 </div>
             ))}
         </>
