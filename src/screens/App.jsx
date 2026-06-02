@@ -35,14 +35,14 @@ function App() {
   const [Value_resultado, setResultado] = useState(0)
   const nav = useNavigate()
 
-  const { tema, TrocarCor } = useContext(TemaContext)
+  const { tema } = useContext(TemaContext)
 
   return (
     <div style={{ backgroundColor:`${tema}` }}>
       <Header id='Header'  >
         {Array_botoes.map((item, key) => {
           return (
-            <button key={key} onClick={() => { setClass(item.telaid) }} >{item.nome}</button>
+            <button key={key} style={{backgroundColor:` ${Valor_class == item.telaid ? "green":"" }` }} onClick={() => { Valor_class == item.telaid ? setClass(null):setClass(item.telaid) }} >{item.nome}</button>
           )
         })}
       </Header>

@@ -19,20 +19,22 @@ export const UserContext = createContext(null)
 
 export function UserProvider({ children }) {
 
-    const [user, SetUser] = useState([
-        {
-            nome: "Larissa",
-        },
-        {
-            nome: "Gustava"
-        },
-        {
-            nome: "Davi"
-        }
-    ])
+    const [user, SetUser] = useState(
+        [
+            {
+                nome: "Larissa",
+            },
+            {
+                nome: "Gustavo"
+            },
+            {
+                nome: "Davi"
+            }
+        ]
+    )
 
     return (
-        <UserContext.Provider value={ user }>
+        <UserContext.Provider value={user}>
             {children}
         </UserContext.Provider>
     )

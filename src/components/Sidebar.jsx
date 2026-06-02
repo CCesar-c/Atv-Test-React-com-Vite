@@ -1,3 +1,5 @@
+import { useContext } from "react"
+import { TemaContext } from "../Context/Contextos"
 import { Navegar } from "../routes/Rotas"
 
 export function Header({ children }) {
@@ -8,11 +10,13 @@ export function Header({ children }) {
         </div>)
 }
 export function Footer() {
+    const { tema, TrocarCor } = useContext(TemaContext)
     const nav = Navegar()
     return (
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center" }} >
-            <button onClick={() => nav("anterior") }>{"<-"}</button>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+            <button onClick={() => nav("anterior")}>{"<-"}</button>
             <button onClick={() => nav("seguinte")} >{"->"}</button>
+            <button onClick={() => TrocarCor() } >{"Tema"}</button>
         </div>
     )
 }

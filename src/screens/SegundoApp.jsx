@@ -32,7 +32,7 @@ export function SegundoApp() {
             <Header id='Header'  >
                 {Array_botoes.map((item) => {
                     return (
-                        <button key={item.id} onClick={() => { item.nome == telAtual ? setTelaAtual("") : setTelaAtual(item.nome) }} >{item.nome}</button>
+                        <button style={{backgroundColor:` ${telAtual == item.nome ? "#C1E1C1":"" }` }} key={item.id} onClick={() => { item.nome == telAtual ? setTelaAtual("") : setTelaAtual(item.nome) }} >{item.nome}</button>
                     )
                 })}
             </Header>
